@@ -14,11 +14,15 @@ export const GithubProvider = ({ children }) => {
 
     const initialState = {
         users: [],
-        loading: true
+        loading: false,
     }
     const [state, dispatch] = useReducer(githubReducer, initialState)  /// This takes two arguement one is Reducer and other is state. the array containe state an dispatch ,this dispatch dispatches an action to reducer
 
+    /// Get initial user (testing purposes)
     const fetchUsers = async () => {
+
+        setLoading();
+
         const response = await fetch(`${GITHUB_URL}/users`, {
             headers: {
                 Authorization: `token ${GITHUB_TOKEN}`,
@@ -31,11 +35,16 @@ export const GithubProvider = ({ children }) => {
         // console.log(data);
 
         dispatch({
-            type: 'GER_USERS',
+            type: 'GET_USERS',
             payload: data,
         })
-
     };
+
+    /// Set Loading
+    const setLoading = () => dispatch({
+        type: 'SET_LOADING'
+    })
+
     return <GithubContext.Provider value={{
         /// WHEN WE ONLY USE CONTEXT
         // users,

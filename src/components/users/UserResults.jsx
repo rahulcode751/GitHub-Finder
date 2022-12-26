@@ -26,9 +26,9 @@ function UserResults() {
   //     // console.log(data);
   //   };
   const { users, loading, fetchUsers } = useContext(GithubContext);
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+  //   useEffect(() => {
+  //     fetchUsers();
+  //   }, []);
 
   if (!loading) {
     return (
