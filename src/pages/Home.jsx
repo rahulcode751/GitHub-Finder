@@ -1,5 +1,6 @@
 /** @format */
 import UserResults from "../components/users/UserResults";
+import UserSearch from "../components/users/UserSearch";
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
     //   {UserResults}
     // </div>
     <>
+      <UserSearch />
       {/* SEARCH COMPONENT */}
       <UserResults />
     </>

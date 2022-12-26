@@ -11,6 +11,11 @@ const githubReducer = (state, action) => {  /// Reducer takes two arguement one 
                 ...state,
                 loading: false,
             }
+        case 'CLEAR_USERS':
+            return {
+                ...state,
+                users: [],
+            }
         default:
             return state
     }

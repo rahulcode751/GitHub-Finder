@@ -11,7 +11,7 @@ function App() {
   return (
     <GithubProvider>
       <Router>
-        <div className="flex flex-col justify-between h-screen">
+        <div className="flex flex-col justify-between h-screen" style={{ backgroundColor: 'GrayText' }}>
           <Navbar />
           <main>
             <Routes>
