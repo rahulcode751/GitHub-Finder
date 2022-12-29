@@ -4,13 +4,13 @@
 /node_modules
 /.pnp
 .pnp.js
-/.env
+.env
 
-/package.json
-/dependencies.text
-/globals.d.ts
-/craco.config.js
-/tailwind.config.js
+package.json
+dependencies.text
+globals.d.ts
+craco.config.js
+tailwind.config.js
 
 # testing
 /coverage
