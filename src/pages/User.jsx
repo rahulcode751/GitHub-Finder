@@ -6,17 +6,41 @@ import GithubContext from "../context/github/GithubContext";
 import { Link } from "react-router-dom";
 import Spinner from "../components/layout/Spinner";
 import RepoList from "../components/repos/RepoList";
+// import { getUser, getUserRepos } from "../context/github/GithubActions";
+import { getUserAndRepos } from "../context/github/GithubActions";
 
 function User() {
-  const { getUser, user, loading, getUserRepos, repos } =
-    useContext(GithubContext);
+  // const { getUser, user, loading, getUserRepos, repos } =
+  //   useContext(GithubContext);
+  const { user, repos, loading, dispatch } = useContext(GithubContext);
 
   const params = useParams();
 
   useEffect(() => {
-    getUser(params.login);
-    getUserRepos(params.login);
-  }, []);
+    // dispatch({ type: "SET_LOADING" });
+    // const getUserData = async () => {
+    //   const userData = await getUser(params.login);
+    //   dispatch({
+    //     type: "GET_USER",
+    //     payload: userData,
+    //   });
+    //   const userRepoData = await getAndRepos(params.login);
+    //   dispatch({
+    //     type: "GET_REPOS",
+    //     payload: userRepoData,
+    //   });
+    // };
+
+    dispatch({ type: "SET_LOADING" });
+    const getUserData = async () => {
+      const userData = await getUserAndRepos(params.login);
+      dispatch({
+        type: "GET_USER_AND_REPOS",
+        payload: userData,
+      });
+    };
+    getUserData();
+  }, [dispatch, params.login]);
 
   const {
     name,
@@ -109,7 +133,11 @@ function User() {
                 <div className='stat'>
                   <div className='stat-title text-md'>Website</div>
                   <div className='text-lg stat-value'>
-                    <a href={"https://" + blog} target='_blank'>
+                    <a
+                      href={"https://" + blog}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
                       {blog}
                     </a>
                   </div>
@@ -123,6 +151,7 @@ function User() {
                     <a
                       href={"https://twitter.com/" + twitter_username}
                       target='_blank'
+                      rel='noreferrer'
                     >
                       {twitter_username}
                     </a>
