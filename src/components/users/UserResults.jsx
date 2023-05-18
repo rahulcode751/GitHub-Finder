@@ -1,5 +1,4 @@
 /** @format */
-
 import { useEffect, useState, useContext } from "react";
 import Spinner from "../layout/Spinner";
 import UserItem from "./UserItem";
@@ -11,7 +10,7 @@ function UserResults() {
 
   //   useEffect(() => {
   //     fetchUsers();
-  //   }, []);
+  //   }, []); // the argument array is array of dependencies
 
   //   const fetchUsers = async () => {
   //     const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users`, {
@@ -26,9 +25,9 @@ function UserResults() {
   //     // console.log(data);
   //   };
   const { users, loading, fetchUsers } = useContext(GithubContext);
-  //   useEffect(() => {
-  //     fetchUsers();
-  //   }, []);
+  // useEffect(() => {
+  //   fetchUsers();
+  // }, []);
 
   if (!loading) {
     return (
