@@ -40,7 +40,7 @@ function UserSearch() {
   };
 
   return (
-    <div className='grid content-center grid-cols-1 gap-8 mb-8 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2'>
+    <div style={{ justifyContent: 'center', width: '50%', marginLeft: '25%', border: '1px solid black', borderRadius: '10px' }}>
       <div>
         <form onSubmit={handleSubmit}>
           <div className='form-control'>
@@ -84,7 +84,7 @@ function UserSearch() {
       {/* <div>
         <button className='btn btn-ghost btn-lg'>Clear</button>
       </div> */}
-    </div>
+    </ div>
   );
 }
 

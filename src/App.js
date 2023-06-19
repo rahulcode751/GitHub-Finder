@@ -14,7 +14,9 @@ function App() {
     <GithubProvider>
       <AlertProvider>
         <Router>
-          <div className="flex flex-col justify-between h-screen" style={{ backgroundColor: 'GrayText' }}>
+          <div className="flex flex-col justify-between h-screen" style={{
+            backgroundColor: '#d0d7de'
+          }}>
             <Navbar />
             <main className='container m-auto p-auto'>
               <Alert />
@@ -23,7 +25,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/user/:login" element={<User />} />
                 <Route path="/notfound" element={<NotFound />} />
-                <Route path="*" element={<NotFound />} />
+                <Route path="/*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer />

@@ -8,14 +8,14 @@ function About() {
     // </div>
     <Fragment>
       <h1 className='mb-4 text-6xl'>About GitHub Finder</h1>
-      <p className='mb-4 text-2xl font-light'>
+      <p style={{ justifyContent: 'center', margin: '0' }}>
         A React.js app to search GitHub profiles and see profile details. This
         app uses the Context API along with the useContext and useReducer hooks
         for state management and is part of the{" "}
-        <strong>React Front To Back</strong> Udemy course from{" "}
-        <strong>
+        {/*<strong>React Front To Back</strong> Udemy course from{" "} */}
+        {/* <strong>
           <a href='https://traversymedia.com'>Brad Traversy</a>
-        </strong>
+  </strong> */}
         .
       </p>
       <p className='mb-4 text-2xl font-light'>
